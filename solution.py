@@ -39,6 +39,10 @@ s contains only digits and may contain leading zero(s).
 
 class Solution:
     def numDecodings(self, s: str) -> int:
+        if len(s) < 1 or len(s) > 100:
+            raise ValueError
+        if not s.isdigit():
+            raise ValueError
         dp = {len(s): 1}
 
         def dfs(i):
