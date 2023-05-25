@@ -6,21 +6,23 @@ class TestSolution(TestCase):
     """
     Стандартные случаи
     """
+    # Input: s = "12" Output: 2
     def test_num_decoding_two_ways(self):
         sut = Solution()
         self.assertEqual(sut.numDecodings("12"), 2)
 
+    # Input: s = "226" Output: 3
     def test_num_decoding_three_ways(self):
         sut = Solution()
         self.assertEqual(sut.numDecodings("226"), 3)
 
+    # Input: s = "06" Output: 0
     def test_num_decoding_no_ways(self):
         sut = Solution()
         self.assertEqual(sut.numDecodings("06"), 0)
 
-    """
-    Граничащие значения
-    """
+
+class TestLengthValidation(TestCase):
     # 1 <= s.length <= 100
     def test_num_decoding_len_1(self):
         sut = Solution()
@@ -32,12 +34,12 @@ class TestSolution(TestCase):
 
     def test_num_decoding_len_99(self):
         sut = Solution()
-        string = "6"*99
+        string = "6" * 99
         self.assertEqual(sut.numDecodings(string), 1)
 
     def test_num_decoding_len_100(self):
         sut = Solution()
-        string = "6"*100
+        string = "6" * 100
         self.assertEqual(sut.numDecodings(string), 1)
 
     def test_num_decoding_with_empty_string(self):
@@ -47,12 +49,14 @@ class TestSolution(TestCase):
 
     def test_num_decoding_with_len_101(self):
         sut = Solution()
-        string = "6"*101
+        string = "6" * 101
         with self.assertRaises(ValueError):
             sut.numDecodings(string)
 
+
+class TestStrIsDigitValidation(TestCase):
     """
-    Только цифры
+    Строка должна состоять только из цифр
     """
     def test_num_decoding_with_only_digits(self):
         sut = Solution()
@@ -72,6 +76,7 @@ class TestSolution(TestCase):
         sut = Solution()
         with self.assertRaises(ValueError):
             sut.numDecodings("@!$%@$^*.")
+
     """
     Нули
     """
