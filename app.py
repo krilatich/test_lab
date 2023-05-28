@@ -17,8 +17,10 @@ def main_page():
     else:
         return "<html><head><title>This is Test App</title></head>" \
                "<body>" \
+                "<h1>This is Test App</h1>"\
                "<form action='/' method=POST>" \
                "<input type='text' name='data' />" \
+               "<input id='go' type='submit' />"\
                "</form>" \
                "</body></html>"
 
